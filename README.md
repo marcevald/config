@@ -20,3 +20,6 @@ For i3:
  - Light -- enable screenbrightness adjustment. - http://haikarainen.github.io/light/
  - Remeber addons to i3-config
 
+.bin folder in home folder contains own scripts
+ - lock
+ - HDMI, Dock and laptop xrandr scripts.
