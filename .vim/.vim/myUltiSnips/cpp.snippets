@@ -1,0 +1,53 @@
+priority 1000
+# Member get
+snippet dmg
+	${2:int} get_${1:foo}() const {return $1; };
+	$0
+endsnippet
+
+snippet mg
+	${2:int} get_${1:foo}() const;
+	$0
+endsnippet
+
+snippet ms
+	${2:void} set_${1:foo}(${3:int}& $1);
+	$0
+endsnippet
+
+snippet dms
+	void set_${1:foo}(${2:int}& ${1/(.).*/$1/g}) { $1 = ${1/(.).*/$1/g}  };
+	$0
+endsnippet
+
+snippet dmf
+	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() 
+	{
+		${0}
+	}
+endsnippet
+
+snippet dmf0
+	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() 
+	{
+		${0}
+	}
+endsnippet
+
+snippet dmf1
+	${5:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter})
+	{
+		${0}
+	}
+endsnippet
+
+snippet dmf2
+	${7:void} ${1:`vim_snippets#Filename("$1")`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter})
+	{
+		${0}
+	}
+endsnippet
+
+snippet Inc
+	#include "${1:`vim_snippets#Filename("$1.hpp")`}"
+endsnippet
