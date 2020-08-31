@@ -26,6 +26,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+filetype indent on
 
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode = 0
@@ -47,7 +48,7 @@ let g:tex_flavor = "latex"
 "    \}
 
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Set UltiSnip Directory
 let g:UltiSnipsSnippetDirectories = ["UltiSnips","myUltiSnips"]
@@ -56,14 +57,14 @@ let g:UltiSnipsEditSplit = "horizontal"
 let g:UltiSnipsExpandTrigger='<Leader><Leader>'
 let g:UltiSnipsListSnippets='<c-tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UaptiSnipsJumpBackwardTrigger='<c-k>'
 
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <C-c> :w<CR> <bar> :!clear && cmake . -Bbuild && cmake --build build/<CR>
-
+nmap <C-n> :NERDTreeToggle<CR>
 " Spell check
 " Fix mistake
 noremap <Leader>f z=
