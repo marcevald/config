@@ -28,10 +28,21 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set splitright
 
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+filetype on
 filetype indent on
+filetype plugin on
 
 let g:vimtex_view_method = 'zathura'
+let g:livepreview_previewer = 'zathura'
 let g:vimtex_quickfix_mode = 0
 set conceallevel=1
 let g:tex_conceal='abdmg'
@@ -39,16 +50,16 @@ let g:tex_conceal='abdmg'
 let g:tex_flavor = "latex"
  "Disable warnings about missing clientserver, since none is available
 "let g:vimtex_compiler_latexmk = {'callback' : 0}
-"let g:vimtex_compiler_latexmk = {
-"    \ 'options' : [
-"    \   '-pdf',
-"    \   '-shell-escape',
-"    \   '-verbose',
-"    \   '-file-line-error',
-"    \   '-synctex=0',
-"    \   '-interaction=nonstopmode',
-"    \ ],
-"    \}
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=0',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
@@ -66,7 +77,7 @@ autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <C-c> :w<CR> <bar> :!clear && cmake . -Bbuild && cmake --build build/<CR>
+"nnoremap <C-c> :w<CR> <bar> :!clear && cmake . -Bbuild && cmake --build build/<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 " Spell check
 " Fix mistake

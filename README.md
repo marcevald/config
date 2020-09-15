@@ -23,3 +23,4 @@ For i3:
 .bin folder in home folder contains own scripts
  - lock
  - HDMI, Dock and laptop xrandr scripts.
+Install xclip for copying from vim to clipboard
