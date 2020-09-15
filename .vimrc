@@ -10,6 +10,7 @@ Plug 'pboettch/vim-cmake-syntax'
 Plug 'vim-airline/vim-airline'
 Plug 'rhysd/vim-grammarous'
 Plug 'puremourning/vimspector'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 "Leader Keys
@@ -19,7 +20,9 @@ let maplocalleader= "-"
 syntax on
 set number
 set relativenumber
-colorscheme darkblue
+"colorscheme darkblue
+colorscheme gruvbox
+set background=dark
 
 set tabstop=4
 set softtabstop=4
@@ -82,3 +85,4 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+vnoremap <Leader>y :w !xclip -selection clipboard<CR><CR>
